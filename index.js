@@ -23,7 +23,8 @@ app.get("/posts", async (req, res) => {
 
 app.post("/users", async (req, res) => {
   const data = await postNewUser(req.headers);
-  return res.set('Access-Control-Allow-Origin', '*').send(data);
+  res.set('Access-Control-Allow-Origin', '*')
+  return res.send(data);
 });
 
 app.post("/posts", async (req, res) => {
